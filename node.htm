@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Greens Kiosk</title>
+    <script src="GreensKiosk.js"></script>
+</head>
+
+<body>
+    <h1 id="title">Welcome to Greens Kiosk</h1>
+    <p>We sell fruits and vegetables</p>
+    <h2>Products</h2>
+    <ul id="products">
+        <!-- Show products list from API -->
+        <script>
+            var router = router.express()
+            router.get('/server', (req, res) => {
+                console.log(products)
+                res.send(products)
+            })
+            router.get('/:category', (req, res) => {
+                const {
+                    category
+                } = req.params
+                const targetedProduct = products.find(product => product.category == category)
+                res.send(targetedProduct)
+            })
+        </script>
+    </ul>
+    <h3>Fruits</h3>
+    <ul id="fruList">
+        <p>{products}</p>
+        <!-- Show fruits from API -->
+    </ul>
+    <h3>Vegetables</h3>
+    <ul id="vegList">
+        <!-- Show vegetables from API -->
+    </ul>
+</body>
+
+</html>

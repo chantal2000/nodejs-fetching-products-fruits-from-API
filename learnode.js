@@ -1,0 +1,5 @@
+const os = require("os")
+const totalmemory = os.totalmem()
+const freemem = os.freemem()
+console.log(`total memory is ${totalmemory}`)
+console.log(`total memory is ${freemem}`)
